@@ -1,0 +1,46 @@
+{
+    "produk":[
+        {
+            "nama" : "Popcorn Creamello",
+            "poster" : "creamello",
+            "harga" : "13.000",
+            "varian" : ["butter","caramel","cheese","chili","coklat","greentea","saltedegg","seaweed"],
+            "shopee" : "https://shopee.co.id/POPCORN-CREAMELLO-SNACK-MURAH-i.18493105.2093739857",
+            "tokopedia" : "https://www.tokopedia.com/charysastore/creamello-kettle-corn-sweet-butter",
+            "wa" : "https://wa.link/5mx2cf",
+            "deskripsi": "Diproduksi oleh Creamello, Snack ini memiliki rasa yang gurih dan renyah. Penyediaan yang baik dan higienis membuat nya mudah dibawa kemana saja Anda pergi."
+        },
+        {
+            "nama" : "Pisang Sang Dewa",
+            "poster" : "pisangsangdewa",
+            "harga" : "18.000",
+            "varian" : ["coklat","susu","original","greentea"],
+            "shopee" : "https://shopee.co.id/SANG-DEWA-KERIPIK-PISANG-i.18493105.4713740873",
+            "tokopedia" : "notfound",
+            "wa" : "https://wa.link/6e7gly",
+            "deskripsi": "Sang Dewa (Dewanya Pisang) Cemilan Renyah Dengan 4 Varian Rasa Favorit di Kelasnya"
+        },
+        {
+            "nama" : "Tela Sparta",
+            "poster" : "spartakripiksingkong",
+            "harga" : "18.000",
+            "varian" : ["berbeque","hot","sweet"],
+            "shopee" : "https://shopee.co.id/DEWA-SNACK-MIX-SANG-DEWA-TELA-SPARTA-KIRUN-MAKARUN-i.18493105.6354572113",
+            "tokopedia" : "notfound",
+            "wa" : "https://wa.link/4drmop",
+            "deskripsi": "Nikmatnya Nyemil Keripik Singkong Seharian Dengan Sensasi Gurih & Pedas Yang Tak Terlupakan"
+        },
+        {
+            "nama" : "Tricks",
+            "poster" : "trick",
+            "harga" : "10.000/<span>pack</span>",
+            "varian" : ["asianbbq","bulgoki","kimchi","original","rendang"],
+            "shopee" : "notfound",
+            "tokopedia" : "notfound",
+            "wa" : "https://wa.link/thy3id",
+            "deskripsi": "Terbuat dari kentang pilihan dengan Varian rasa-nya menciptakan sensasi makan kentang yang berbeda. Dengan kalorinya yang kurang dari 100 menjadikan Tricks sebagai salah satu snack sehat yang bisa dimakan kapan pun."
+        }
+    ]
+}
+
+
