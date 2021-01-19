@@ -13,7 +13,7 @@ This is Simple Landing Page of Charysa_Store that i created as my case studies i
 * Galery
 
 # Screenshoot
-<br> Live Demo Can access at <a href="http://charysastore.atwebpages.com/">http://charysastore.atwebpages.com/</a> <br>
+Live Demo Can access at <a href="http://charysastore.atwebpages.com/">http://charysastore.atwebpages.com/</a> <br><br>
 <img src="screenshoot/home.png" width="860px" /><br>
 <img src="screenshoot/produkpreview.png" width="860px" /><br>
 <img src="screenshoot/alert.jpeg" width="860px" /><br><br>
