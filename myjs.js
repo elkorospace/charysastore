@@ -38,7 +38,6 @@ document.querySelectorAll('section').forEach((e)=>{
         e.style.minHeight = wHeight+'px'
     }
 });
-console.log(wHeight);
 
 // -----------------------
 // Smooth Scroll
@@ -83,6 +82,17 @@ function landingFocus(){
     // Landing Effect slider at testi 
     // -------------------------------
     (window.scrollY >= seactionTesti.offsetTop-400) ? slider.classList.add('rise') : '' ;
+    
+    // -------------------------------
+    // Landing Effect card at produk 
+    // -------------------------------
+    if(document.querySelectorAll('.card')){
+        (window.scrollY >= seactionProduk.offsetTop-400) ? document.querySelectorAll('.card').forEach((e,i)=>{
+            setTimeout(() => {
+                e.classList.add('rise');
+            }, 200*i);
+        }) : '' ;
+    }
 
     // --------------------------------
     // Landing Effect instagram's feed
@@ -124,7 +134,6 @@ window.addEventListener('scroll',function(e){
     // Removing Class of rise 
     // -----------------------
     (window.scrollY >= 10) ? document.querySelector('nav ul') : document.querySelector('nav ul').classList.remove('down');
-    (window.scrollY >= 10) ? document.querySelector('.nav-logo').classList.add('rise') : document.querySelector('.nav-logo').classList.remove('rise');
     (window.scrollY >= 10) ? document.querySelector('.bg-kontak') : document.querySelector('.bg-kontak').classList.remove('rise');
     (window.scrollY >= 10) ? document.querySelectorAll('.kontak a') : document.querySelectorAll('.kontak a').forEach(e => e.classList.remove('rise'));
 })

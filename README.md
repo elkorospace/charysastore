@@ -1,10 +1,9 @@
-# Charysa_Store Landing Page
+# Charysastore Landing Page
 This is Simple Landing Page of Charysa_Store that i created as my case studies in learning HTML, CSS and JAVASCRIPT. Moreover, I want to help my sister to grow her business.
 
 # Tools
 - [x] VS Code
 - [x] GIMP
-- [x] Elfsight Instagram Feed
 
 # Features
 * Images slider
