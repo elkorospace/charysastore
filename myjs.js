@@ -87,11 +87,14 @@ function landingFocus(){
     // Landing Effect card at produk 
     // -------------------------------
     if(document.querySelectorAll('.card')){
-        (window.scrollY >= seactionProduk.offsetTop-400) ? document.querySelectorAll('.card').forEach((e,i)=>{
-            setTimeout(() => {
-                e.classList.add('rise');
-            }, 200*i);
-        }) : '' ;
+        if(window.scrollY >= seactionProduk.offsetTop-400) {
+            document.querySelectorAll('.card').forEach((e,i)=>{
+                setTimeout(() => {
+                    e.classList.add('rise');
+                }, 200*i);
+            }); 
+            temporaryImg2();
+        }
     }
 
     // --------------------------------
@@ -167,10 +170,12 @@ btnSlider.forEach(e => e.addEventListener('click',function(){
 // temporary image 1
 // ---------------------------
 let j = 1
-let elImages = '';
+let imgTesti = '';
+let imgVarian = '';
 for(j=1;j<=10;j++){
-    elImages += `<img src="img/testi${j}.jpeg" width="100%" height="100%">`
+    imgTesti += `<img src="img/testi${j}.jpeg" width="100%" height="100%">`
 }
+temporaryImg.innerHTML = imgTesti;
 
 // ---------------------------
 // Create Card
@@ -183,7 +188,6 @@ function getProduk(){
 function updateCards(produk){
     let xx = produk.produk;
     let cards = '';
-    let imgVarian = '';
     
     xx.forEach(c => {
         cards += `<div class="card">
@@ -197,22 +201,26 @@ function updateCards(produk){
             })
     })
 
-    // ---------------------------
-    // temporary image 2
-    // ---------------------------
     document.querySelector('.produk-card').innerHTML = cards;
     document.querySelectorAll('.produk-card .card img').forEach((e,i) => {
         if(i > 0 && i < 3){
             e.setAttribute('width','66%');
         }
     });
-    temporaryImg.innerHTML = elImages+imgVarian;
+    
 }
 async function fillCard(){
     let produk = await getProduk();  
     updateCards(produk);
 }
 fillCard();
+
+// ---------------------------
+// temporary image 2
+// ---------------------------
+function temporaryImg2(){
+    temporaryImg.innerHTML = imgTesti+imgVarian;
+}
 
 // ---------------------------
 // Update Detail Box
