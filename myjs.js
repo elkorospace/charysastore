@@ -1,6 +1,8 @@
 // -------------------------| DOM |-------------------------
 let wHeight = window.innerHeight;
 let wWidth = window.innerWidth;
+let navbar = document.querySelector('nav');
+let navbarLogo = document.querySelector('.nav-logo');
 let seactionTesti = document.querySelector('section#testi');
 let seactionProduk = document.querySelector('section#produk');
 let seactionGaleri = document.querySelector('section#galeri');
@@ -32,9 +34,10 @@ document.querySelectorAll('section').forEach((e)=>{
     if(e.classList.contains('loading')){
         e.style.minHeight = wHeight+'px'
     }
-    else if(wHeight <= 702){
-        e.style.minHeight = 702+'px'
-    }else{
+    // else if(wHeight <= 702){
+    //     e.style.minHeight = 702+'px'
+    // }
+    else{
         e.style.minHeight = wHeight+'px'
     }
 });
@@ -42,24 +45,28 @@ document.querySelectorAll('section').forEach((e)=>{
 // -----------------------
 // Smooth Scroll
 // -----------------------
-document
-    .querySelectorAll('a.link-scroll')
-    .forEach(trigger => {
-        trigger.onclick = function(e) {
-            e.preventDefault();
-            let hash = this.getAttribute('href');
-            let target = document.querySelector(hash);
-            let headerOffset = 0;
-            let elementPosition = target.offsetTop;
-            let offsetPosition = elementPosition - headerOffset;
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
-        };
-    });
+document.querySelectorAll('a.link-scroll').forEach(trigger => {
+    trigger.onclick = function(e) {
+        e.preventDefault();
+        let hash = this.getAttribute('href');
+        let target = document.querySelector(hash);
+        let headerOffset = 0;
+        let elementPosition = target.offsetTop;
+        let offsetPosition = elementPosition - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    };
+});
 
 function landingFocus(){
+    
+    // ------------------------
+    // Nav Shadow, Nav logo
+    // ------------------------
+    (window.scrollY >= 10) ? navbar.classList.add('shadowOn') : navbar.classList.remove('shadowOn');
+    (window.scrollY >= 10) ? navbarLogo.classList.add('rise') : navbarLogo.classList.remove('rise');
     
     // -----------------------
     // Set aHref's Focus Mode
@@ -105,28 +112,9 @@ function landingFocus(){
 }
 landingFocus();
 
-var lastScroll = 0;
-
 window.addEventListener('scroll',function(e){
     
     landingFocus();
-
-    // ------------------------
-    // Nav Up, Down and shadow
-    // ------------------------
-    let currentScroll = document.documentElement.scrollTop || document.body.scrollTop; // Get Current Scroll Value
-
-    if (currentScroll > 0 && lastScroll <= currentScroll){
-        lastScroll = currentScroll;
-        document.querySelector('nav').classList.add('up')
-        document.querySelector('nav').classList.remove('shadowOn')
-    }else{
-        lastScroll = currentScroll;
-        document.querySelector('nav').classList.remove('up')
-        document.querySelector('nav').classList.add('shadowOn')
-    }
-    (window.scrollY >= 10) ? document.querySelector('nav') : document.querySelector('nav').classList.remove('shadowOn');
-
 
     // ------------------------
     // Rise On Contac's Button
@@ -301,6 +289,7 @@ window.addEventListener('click',function(e){
     // ---------------------------
     if(e.target.classList.contains('burger-btn')){
         (!document.querySelector('nav').classList.contains('shadowOn')) ? document.querySelector('nav').classList.toggle('shadowOn') : document.querySelector('nav').classList.add('shadowOn');
+        document.querySelectorAll('nav .burger-span img').forEach(e => e.classList.toggle('active'));
         document.querySelector('nav ul').classList.toggle('down');
     }
 
@@ -347,6 +336,7 @@ window.addEventListener('click',function(e){
     else{
         if(document.querySelector('nav ul').classList.contains('down')){
             document.querySelector('nav ul').classList.remove('down');
+            document.querySelectorAll('nav .burger-span img').forEach(e => e.classList.remove('active'));
         }
         if(document.querySelector('.bg-kontak').classList.contains('rise')){
             document.body.style.overflow = 'auto';
@@ -368,3 +358,18 @@ window.addEventListener('click',function(e){
         }
     }
 })
+
+
+
+
+// var lastScroll = 0;
+// let currentScroll = document.documentElement.scrollTop || document.body.scrollTop; // Get Current Scroll Value
+// if (currentScroll > 0 && lastScroll <= currentScroll){
+//     lastScroll = currentScroll;
+//     document.querySelector('nav').classList.add('up')
+//     document.querySelector('nav').classList.remove('shadowOn')
+// }else{
+//     lastScroll = currentScroll;
+//     document.querySelector('nav').classList.remove('up')
+//     document.querySelector('nav').classList.add('shadowOn')
+// }

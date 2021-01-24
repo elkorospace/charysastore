@@ -10,19 +10,17 @@ body{
                 Navbar
 --------------------------------- */
 nav{
+    /* background-color: blue; */
+    min-height: 60px;
+    padding: 0 34px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     left: 0;
     right: 0;
     z-index: 3;
-    min-height: 80px;
-    transform: translateY(0px);
     transition: all 0.3s;
-}
-nav.up{
-    transform: translateY(-80px);
 }
 nav.shadowOn{
     box-shadow: 0px 1px 10px #999;
@@ -30,29 +28,60 @@ nav.shadowOn{
 }
 nav .nav-logo{
     display: none;
-    position: absolute;
-    left: 16px;
+    background-image: url(img/logocut.png);
+    background-size: cover;
+    background-position: center;
     outline: none;
-    width: 56px;
-    transition: all 0.4s;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
     opacity: 0;
     transition: all 0.4s;
 }
 nav .nav-logo.rise{
     opacity: 1;
 }
+nav .burger-span{
+    display: none;
+    border-radius: 4px;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+nav .burger-span img{
+    opacity: 0.6;
+}
+nav .burger-span img.burgerOpen{
+    /* default display is inline-block */
+}
+nav .burger-span img.burgerOpen.active{
+    display: none;
+}
+nav .burger-span img.burgerClose{
+    display: none;
+}
+nav .burger-span img.burgerClose.active{
+    display: inline-block;
+}
 nav ul{
     list-style: none;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
-    width: 85%;
 }
 nav ul a{
     display: block;
     font-family: 'Poppins', sans-serif;
     color: #8a8fa3;
     padding: 8px 16px;
-    margin-right: 1.5rem;
+    margin-left: 1.5rem;
     text-decoration: none;
     transition: all 0.3s;
     border-bottom: 3px solid rgba(255, 255, 255, 0);
@@ -60,40 +89,13 @@ nav ul a{
 }
 nav ul a:hover{
     color: rgb(185, 141, 70);
-    transform: translateY(-2px) scale(1.1);
+    /* transform: translateY(-2px) scale(1.1); */
     border-bottom: 3px solid rgb(185, 141, 70);
 }
 nav ul a.focus{
     color: rgb(185, 141, 70);
-    transform: translateY(-2px) scale(1.1);
+    /* transform: translateY(-2px) scale(1.1); */
     border-bottom: 3px solid rgb(185, 141, 70);
-}
-nav .burger-span{
-    border: 0.1vw solid rgba(138, 143, 163, 0.7);
-    border-radius: 4px;
-    width: 42px;
-    height: 38px;
-    padding: 4px;
-    box-sizing: border-box;
-    display: none;
-    flex-direction: column;
-    justify-content: space-evenly;
-    position: absolute;
-    right: 16px;
-    cursor: pointer;
-}
-nav .burger-span:hover >*{
-    background-color: rgb(185, 141, 70);
-}
-nav .burger-span.focus >*{
-    background-color: rgb(185, 141, 70);
-}
-nav .burger-span span{
-    background-color: #8a8fa3;
-    border-radius: 2px;
-    display: block;
-    height: 12%;
-    width: 100%;
 }
 
 /* -----------------------------
@@ -119,7 +121,7 @@ section.header{
     background-image: linear-gradient(rgb(180, 223, 238), #fff6e4);
     display: flex;
     align-items: center;
-    padding: 80px 30px 0px 30px;
+    padding: 100px 30px;
     box-sizing: border-box;
 }
 section.header .header-logo,
@@ -227,7 +229,7 @@ section.testimoni{
     background-image: linear-gradient(#fff6e4,rgb(180, 223, 238));
     display: flex;
     align-items: center;
-    padding: 80px 20px 9vw 20px;
+    padding: 140px 30px;
     box-sizing: border-box;
 }
 section.testimoni .slider,
@@ -377,12 +379,12 @@ section.testimoni .testimoni-text{
 ----------------------------- */
 section.produk{
     background-image: linear-gradient(rgb(180, 223, 238),#fff6e4);
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 10px 2vw 9vw 2vw;
+    padding: 70px 2vw;
     box-sizing: border-box;
-    position: relative;
 }
 .produk-text h1{
     font-family: 'Dancing Script', cursive;
@@ -481,8 +483,7 @@ section.galeri{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px 2vw 0px 2vw;
-    box-sizing: border-box;
+    padding: 70px 2vw;
 }
 .galeri-text h1{
     font-family: 'Dancing Script', cursive;
@@ -877,15 +878,15 @@ div.eapps-remove-link{
                 Navbar
     ----------------------------- */
     nav{
-        min-height: 0px;
+        padding: 0px 22px;
     }
     nav .nav-logo{
-        display: inherit;
-        top: 4px;
+        display: block;
     }
     nav .burger-span{
         display: flex;
-        top: 10px;
+        justify-content: center;
+        align-items: center;
     }
     nav ul{
         flex-direction: column;
@@ -901,13 +902,14 @@ div.eapps-remove-link{
     nav ul a{
         text-align: center;
         width: 100%;
+        margin-left: 0;
     }
 
     /* -----------------------------
                 Header
     ----------------------------- */
     section.header{
-        padding: 80px 30px 80px 30px;
+        padding: 80px 30px;
         flex-direction: column;
         justify-content: center;
     }    
@@ -972,7 +974,7 @@ div.eapps-remove-link{
     section.testimoni{
         flex-direction: column;
         Justify-content: flex-start;
-        padding: 50px 3vw 9vw 3vw;
+        padding: 70px 3vw;
     }
     section.testimoni .slider,
     section.testimoni .testimoni-text{
@@ -1023,7 +1025,7 @@ div.eapps-remove-link{
                 Produk
     ----------------------------- */
     section.produk{
-        padding: 50px 3vw 9vw 3vw;
+        padding: 70px 3vw;
     }
     .produk-text h1{
         font-size: 14vw;
@@ -1070,7 +1072,7 @@ div.eapps-remove-link{
     ----------------------------- */
     section.galeri{
         justify-content: flex-start;
-        padding: 50px 3vw 0px 3vw;
+        padding: 70px 3vw;
     }
     .galeri1{
         display: none;
@@ -1150,7 +1152,7 @@ div.eapps-remove-link{
                 Header
     ----------------------------- */
     section.header{
-        padding: 80px 10px 80px 10px;
+        padding: 80px 10px;
         flex-direction: column;
         justify-content: center;
     }   
@@ -1190,7 +1192,7 @@ div.eapps-remove-link{
     ----------------------------- */
     section.testimoni{
         justify-content: flex-start;
-        padding: 50px 5vw 9vw 5vw;
+        padding: 70px 5vw;
     }
     .testimoni-wraper h1{
         font-size: 21vw;
@@ -1225,7 +1227,7 @@ div.eapps-remove-link{
     ----------------------------- */
     section.produk{
         justify-content: flex-start;
-        padding: 50px 3vw 9vw 3vw;
+        padding: 70px 3vw;
     }
     .produk-text h1{
         font-size: 21vw;
@@ -1243,7 +1245,7 @@ div.eapps-remove-link{
                 Galeri
     ----------------------------- */
     section.galeri{
-        padding: 50px 5vw 0px 5vw;
+        padding: 70px 5vw;
     }
     .galeri-text h1{
         font-size: 21vw;
@@ -1302,11 +1304,11 @@ div.eapps-remove-link{
     }
 }
 
-@media(min-width:720px) and (max-height:800px){
+/* @media(min-width:720px) and (max-height:800px){
     section.header{
         padding: 100px 30px 0px 30px;
     }
     section.testimoni{
         padding: 100px 20px 9vw 20px;
     }
-} 
+}  */
