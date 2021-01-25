@@ -3,6 +3,7 @@ let wHeight = window.innerHeight;
 let wWidth = window.innerWidth;
 let navbar = document.querySelector('nav');
 let navbarLogo = document.querySelector('.nav-logo');
+let headerLogo = document.querySelector('.header-logo');
 let seactionTesti = document.querySelector('section#testi');
 let seactionProduk = document.querySelector('section#produk');
 let seactionGaleri = document.querySelector('section#galeri');
@@ -31,15 +32,7 @@ window.addEventListener('load',function(){
 // Set All Section's Heigth
 // -------------------------
 document.querySelectorAll('section').forEach((e)=>{
-    if(e.classList.contains('loading')){
-        e.style.minHeight = wHeight+'px'
-    }
-    // else if(wHeight <= 702){
-    //     e.style.minHeight = 702+'px'
-    // }
-    else{
-        e.style.minHeight = wHeight+'px'
-    }
+    e.style.minHeight = wHeight+'px';
 });
 
 // -----------------------
@@ -55,7 +48,7 @@ document.querySelectorAll('a.link-scroll').forEach(trigger => {
         let offsetPosition = elementPosition - headerOffset;
         window.scrollTo({
             top: offsetPosition,
-            behavior: "smooth"
+            // behavior: "smooth"
         });
     };
 });
@@ -94,7 +87,7 @@ function landingFocus(){
     // Landing Effect card at produk 
     // -------------------------------
     if(document.querySelectorAll('.card')){
-        if(window.scrollY >= seactionProduk.offsetTop-400) {
+        if(window.scrollY >= 10) {
             document.querySelectorAll('.card').forEach((e,i)=>{
                 setTimeout(() => {
                     e.classList.add('rise');
