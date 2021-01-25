@@ -16,4 +16,4 @@ Live Demo Can access at <a href="http://charysastore.atwebpages.com/">http://cha
 <img src="screenshoot/home.png" width="860px" /><br>
 <img src="screenshoot/testi.png" width="860px" /><br>
 <img src="screenshoot/produkpreview.png" width="860px" /><br>
-<img src="screenshoot/alert.jpeg" width="860px" /><br><br>
+<img src="screenshoot/alert.png" width="860px" /><br><br>

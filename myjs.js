@@ -88,12 +88,14 @@ function landingFocus(){
     // -------------------------------
     if(document.querySelectorAll('.card')){
         if(window.scrollY >= 10) {
+            temporaryImg2();
+        }
+        if(window.scrollY >= seactionProduk.offsetTop-400){
             document.querySelectorAll('.card').forEach((e,i)=>{
                 setTimeout(() => {
                     e.classList.add('rise');
                 }, 200*i);
             }); 
-            temporaryImg2();
         }
     }
 
