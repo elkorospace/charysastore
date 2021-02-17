@@ -173,12 +173,12 @@ function updateCards(produk){
     xx.forEach(c => {
         cards += `<div class="card">
             <div class="bground"></div>
-            <img src="img/${c.poster}/${c.poster}.png" width="100%">
+            <img src="img/${c.poster}/${c.poster}.png" loading="lazy" width="100%">
             <div class="btn-detail" data-nama="${c.nama}">DETAIL</div>
             </div>`;
         
             c.varian.forEach(e=>{
-                imgVarian += `<img src="img/${c.poster}/${e}.png" width="100%" height="100%">`;
+                imgVarian += `<img src="img/${c.poster}/${e}.png" loading="lazy" width="100%" height="100%">`;
             })
     })
     
@@ -211,7 +211,7 @@ function updateDetail(nmProduk,produk){
         if(c.nama == nmProduk){
             detail = `<div class="hero-img">
                 <div class="img-wraper">
-                    <img src="img/${c.poster}/${c.varian[0]}.png" width="100%" class="hero">
+                    <img src="img/${c.poster}/${c.varian[0]}.png" loading="lazy" width="100%" class="hero">
                 </div>
             </div>
             <div class="hero-deskripsi">
@@ -232,13 +232,13 @@ function updateDetail(nmProduk,produk){
 
             document.querySelector('.link-wraper').innerHTML = `
             <a href="${c.shopee}" class="btn-link" id="Shopee">
-                <img src="img/shopee.png" width="100%" alt="">
+                <img src="img/shopee.png" loading="lazy" width="100%" alt="">
             </a>
             <a href="${c.tokopedia}" class="btn-link" id="Tokopedia">
-                <img src="img/tokopedia.png" width="100%" alt="">
+                <img src="img/tokopedia.png" loading="lazy" width="100%" alt="">
             </a>
             <a href="${c.wa}" class="btn-link" id="Whatsapp">
-                <img src="img/wa.png" width="100%" alt="">
+                <img src="img/wa.png" loading="lazy" width="100%" alt="">
             </a>`;
         }
     })
