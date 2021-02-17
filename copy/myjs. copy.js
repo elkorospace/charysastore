@@ -173,12 +173,12 @@ function updateCards(produk){
     xx.forEach(c => {
         cards += `<div class="card">
             <div class="bground"></div>
-            <img src="img/${c.poster}/${c.poster}.png" loading="lazy" width="100%">
+            <img src="img/${c.poster}/${c.poster}.png" loading="lazy" width="100%" alt="${c.poster}">
             <div class="btn-detail" data-nama="${c.nama}">DETAIL</div>
             </div>`;
         
             c.varian.forEach(e=>{
-                imgVarian += `<img src="img/${c.poster}/${e}.png" loading="lazy" width="100%" height="100%">`;
+                imgVarian += `<img src="img/${c.poster}/${e}.png" loading="lazy" alt="${c.poster}" width="100%" height="100%">`;
             })
     })
     
@@ -211,7 +211,7 @@ function updateDetail(nmProduk,produk){
         if(c.nama == nmProduk){
             detail = `<div class="hero-img">
                 <div class="img-wraper">
-                    <img src="img/${c.poster}/${c.varian[0]}.png" loading="lazy" width="100%" class="hero">
+                    <img src="img/${c.poster}/${c.varian[0]}.png" loading="lazy" width="100%" class="hero" alt="${c.poster}">
                 </div>
             </div>
             <div class="hero-deskripsi">
@@ -348,18 +348,3 @@ window.addEventListener('click',function(e){
         }
     }
 })
-
-
-
-
-// var lastScroll = 0;
-// let currentScroll = document.documentElement.scrollTop || document.body.scrollTop; // Get Current Scroll Value
-// if (currentScroll > 0 && lastScroll <= currentScroll){
-//     lastScroll = currentScroll;
-//     document.querySelector('nav').classList.add('up')
-//     document.querySelector('nav').classList.remove('shadowOn')
-// }else{
-//     lastScroll = currentScroll;
-//     document.querySelector('nav').classList.remove('up')
-//     document.querySelector('nav').classList.add('shadowOn')
-// }
